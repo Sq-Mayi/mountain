@@ -7,10 +7,41 @@ class ToDo extends StatefulWidget {
 }
 
 class _ToDoState extends State<ToDo> {
+  List lists = [
+    {
+      "label":"计算机四级考试",
+      "describe":"xxx",
+      "color":Colors.red
+    },
+    {
+      "label":"托福考试",
+      "describe":"xxx",
+      "color":Colors.blue
+    },
+    {
+      "label":"托福考试",
+      "describe":"xxx",
+      "color":Colors.yellow
+    },
+    {
+      "label":"托福考试",
+      "describe":"xxx",
+      "color":Colors.green
+    },
+  ];
+
+  _toDo(){
+    return lists.map((e) => Container(
+      child: Text(e['label']),
+      color: e['color'],
+      height: 60,
+      margin: EdgeInsets.all(8),
+    )).toList();
+  }
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('我是待办界面'),
+    return ListView(
+      children: _toDo(),
     );
   }
 }

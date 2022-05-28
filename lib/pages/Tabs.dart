@@ -13,7 +13,7 @@ class Tabs extends StatefulWidget {
 
 class _TabsState extends State<Tabs> {
   int _currentIndex = 0;
-  List pages = [ToDo() , Statistical() , AddToDo() , Reward() , User()];
+  List _pagesList = [ToDo() , Statistical() , AddToDo() , Reward() , User()];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,7 +21,7 @@ class _TabsState extends State<Tabs> {
         appBar: AppBar(
           title: const Text('mountain'),
         ),
-        body: pages[_currentIndex],
+        body: _pagesList[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: _currentIndex,
