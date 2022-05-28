@@ -27,7 +27,9 @@ class _TabsState extends State<Tabs> {
           currentIndex: _currentIndex,
           onTap: (int index)=>{
             setState(()=>{
-              _currentIndex = index
+              if(index != 2){
+                _currentIndex = index
+              }
             })
           },
           items: const [
@@ -54,6 +56,18 @@ class _TabsState extends State<Tabs> {
             ),
           ]
           ),
+          floatingActionButton: Container(
+            margin: EdgeInsets.only(top:10),
+            child: FloatingActionButton(
+              child: Icon(Icons.add),
+              onPressed: (){
+                setState(()=>{
+                  _currentIndex = 2
+              });
+              },
+            ),
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
       theme: ThemeData(
         primarySwatch: Colors.yellow
